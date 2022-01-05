@@ -1,19 +1,15 @@
-string x = "";
-        int i=0,j=0;
-        int count=1;
-        while(i<=s.size()){
-            if(s[i]=='I' || i==s.size()){
-                while(count>=1){
-                    if(count<=j) break;
-                    char ch = count + '0';
-                    x.push_back(ch);
-                    count--;
-                }
-                j = i+1;
-                count = i+1;
-            }
-            count++;
-            i++;
-        }
-        return x;
+class Solution {
+  public:
+    int findPosition(int n , int m , int k) {
+        // code here
+        if(m<(n-k+1))
+        return k+m-1;
+        else
+        m=m-(n-k+1);
+        if(m%n)
+        return m%n;
+        else
+        return n;
+       // return m%n?0:n;
     }
+};
